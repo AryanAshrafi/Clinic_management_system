@@ -9,3 +9,10 @@ class RegisterPatientForm(FlaskForm):
     email_address = StringField(label = 'ایمیل', validators = [Email(), DataRequired()])
     password1 = PasswordField(label = 'رمز عبور', validators = [Length(min = 8, max = 30), DataRequired()])
     password2 = PasswordField(label = 'تایید پسورد', validators = [EqualTo('password1'), DataRequired()])
+    submit = SubmitField(label = 'ایجاد حساب کاربری')
+
+
+class PatientLoginForm(FlaskForm):
+    national_number = StringField(label = 'کدملی', validators = [DataRequired()])
+    password = PasswordField(label = 'رمز عبور', validators = [DataRequired()])
+    submit = SubmitField(label = 'ورود')
