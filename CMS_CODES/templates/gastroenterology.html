@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+  <link rel="stylesheet" href="/static/style/unitPages/app.css">
+  <link rel="stylesheet" href="/static/style/all.min.css">
+  <title>Clinic</title>
+</head>
+
+<body>
+  <a href="/logout"><img src="/static/images/logo.png" alt="logo"></a>
+
+  <div class="profile-box" data-num="1">
+    <div class="head" data-num="2">
+      <i class="fa fa-user-circle" data-num="3"></i>
+      <span data-num="4">پروفایل</span>
+    </div>
+    <div class="child-box">
+      <a href="/my_appointments"><i class="fa fa-list-check"></i> <span>ویزیت ها</span></a>
+      <a href="/logout"><i class="fa fa-sign-out"></i> <span>خروج</span></a>
+    </div>
+  </div>
+
+  <h2 class="page-title">لیست پزشکان بخش گوارش</h2>
+  <span class="doctors_number"></span>
+  <hr>
+  <div class="search-box-container">
+    <input class="search-box" type="text" placeholder="نام پزشک مورد نظر را جستجو کنید...">
+    <i class="fa fa-search"></i>
+  </div>
+  <div class="card-container">
+    {% for gastroenterology_doctor in gastroenterology_doctors %}
+    {% include 'modal3.html' %}
+    <div class="card">
+      <div class="like-box">
+        <i class="fa fa-heart"></i>
+        <span class="like-number">46</span>
+      </div>
+      <i class="fa fa-user-doctor"></i>
+      <h3 class="doctor_name">{{ gastroenterology_doctor.name }}</h3>
+      <span>کد بهداشت </span>
+      <h5 class="health_number">{{ gastroenterology_doctor.healthcare_number }}</h5>
+      <div class="rate-box">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-alt"></i>
+      </div>
+      <div class="btn-box">
+        <a href="#" class="fa fa-comments" title="پرسش و پاسخ"></a>
+        <button class="btn" data-toggle="modal"
+        data-target="#reserve-{{ gastroenterology_doctor.id }}">رزرو وقت ملاقات</button>
+      </div>    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script src="/static/JS/visit_form.js"></script>
+
+</body>
+<script src="/static/JS/like-btn.js"></script>
+<script src="/static/JS/units.js"></script>
+
+</html>
