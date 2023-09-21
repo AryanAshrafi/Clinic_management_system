@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "iranSans";
+  src: url("/static/fonts/A-Iranian-Sans/Iranian_Sans.ttf") format("truetype");
+}
+@font-face {
+  font-family: "yekan";
+  src: url("/static/fonts/Yekan/Yekan.woff2") format("woff2"), url("/static/fonts/Yekan/Yekan.eot.woff") format("woff"), url("/static/fonts/Yekan/Yekan.eot.ttf") format("truetype"), url("/static/fonts/Yekan/Yekan.eot") format("eot");
+}
+body {
+  background-image: url("/static/images/signup.jpg");
+  background-size: cover;
+}
+body .home-btn {
+  width: 130px;
+  text-align: center;
+  border-radius: 0 10px 10px 0;
+  background-color: #ffed4c;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  padding: 4px 0;
+  font-size: 22px;
+  text-decoration: none;
+  font-family: yekan;
+  transition: 0.4s;
+}
+body .home-btn i {
+  color: #ffed4c;
+  transition: 0.4s;
+}
+body .home-btn:hover {
+  width: 150px;
+}
+body .home-btn:hover i {
+  color: blue;
+}
+body .container {
+  width: 100%;
+}
+body .container .form-register {
+  padding: 20px 20px;
+  width: 500px;
+  background-color: rgba(240, 248, 255, 0.7294117647);
+  position: absolute;
+  left: 180px;
+  top: 50px;
+  border-radius: 20px;
+  direction: rtl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(35, 35, 35);
+  box-shadow: 2px 2px 15px 0px #747474;
+  border: 5px groove rgba(240, 248, 255, 0.7294117647);
+}
+body .container .form-register * {
+  direction: rtl;
+  color: black;
+}
+body .container .form-register .title {
+  font-weight: 700;
+  font-family: yekan;
+}
+body .container .form-register .fa-user-plus {
+  color: blue;
+}
+body .container .form-register label {
+  font-family: iranSans;
+  color: rgb(0, 0, 92);
+}
+body .container .form-register input {
+  border: none;
+  outline: none;
+  width: 80%;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  padding: 3px 7px;
+  font-family: yekan;
+  font-weight: 300;
+  padding: 5px 20px;
+}
+body .container .form-register input.e-input {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+  padding-left: 20px;
+  font-weight: 700;
+  direction: ltr;
+}
+body .container .form-register input.e-input::placeholder {
+  text-align: right;
+}
+body .container .form-register .submit-btn {
+  background-color: #080;
+  color: #fff;
+  font-weight: 800;
+  width: 60%;
+}
+body .container .form-register .submit-btn:hover {
+  background-color: #0f0;
+}
+body .container .form-register .check_box {
+  display: flex;
+  gap: 15px;
+}
+body .container .form-register .check_box a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-5px);
+  background-color: gold;
+  text-decoration: none;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.alert-text {
+  width: 100%;
+  text-align: center;
+  font-family: iranSans;
+  direction: rtl;
+  font-size: 20px;
+}
+
+.aligning-pass, .aligning-email {
+  width: 400px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: rgb(255, 47, 0);
+  color: #fff;
+  animation: show 1s linear;
+}
+
+.aligning-email {
+  top: 100px;
+}
+
+@keyframes show {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=patientsignup.css.map */
