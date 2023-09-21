@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "iranSans";
+  src: url("/static/fonts/A-Iranian-Sans/Iranian_Sans.ttf") format("truetype");
+}
+@font-face {
+  font-family: "yekan";
+  src: url("/static/fonts/Yekan/Yekan.woff2") format("woff2"), url("/static/fonts/Yekan/Yekan.eot.woff") format("woff"), url("/static/fonts/Yekan/Yekan.eot.ttf") format("truetype"), url("/static/fonts/Yekan/Yekan.eot") format("eot");
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30px 0;
+}
+body img {
+  width: 90px;
+  position: absolute;
+  left: 50px;
+  top: 5px;
+  animation: heartbeat 1s infinite;
+}
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  30% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.25);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+body .profile-box {
+  position: absolute;
+  right: 150px;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .profile-box .head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  background-color: rgb(79, 4, 117);
+  width: 180px;
+  border-radius: 10px;
+  padding: 3px 5px;
+  font-family: yekan;
+  font-size: 22px;
+  color: aliceblue;
+}
+body .profile-box .head i {
+  font-size: 28px;
+  color: rgb(255, 255, 0);
+}
+body .profile-box .child-box {
+  padding: 15px 0;
+  direction: rtl;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+  clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+  transition: 0.5s;
+  border-radius: 0 0 10px 10px;
+  border-bottom: 2px blue solid;
+  border-right: 2px blue solid;
+  border-left: 2px blue solid;
+}
+body .profile-box .child-box.active {
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+body .profile-box .child-box a {
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 10px;
+  font-family: iranSans;
+  padding: 4px 0;
+}
+body .profile-box .child-box a:hover {
+  background-color: rgb(193, 99, 237);
+  color: aliceblue;
+}
+body h2 {
+  font-family: iranSans;
+  font-weight: 800;
+}
+body .doctors_number {
+  font-family: iranSans;
+  margin-top: 20px;
+  font-weight: 400;
+}
+body .search-box-container {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
+}
+body .search-box-container input {
+  outline: none;
+  border: 1px solid rgb(194, 194, 194);
+  font-size: 20px;
+  font-family: yekan;
+  padding: 5px 12px;
+  border-radius: 0 20px 20px 0;
+  height: 100%;
+  width: 80%;
+}
+body .search-box-container input::placeholder {
+  color: #a5a5a5;
+}
+body .search-box-container i {
+  color: #fff;
+  background-color: rgb(43, 0, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  border-radius: 20px 0 0 20px;
+  height: 100%;
+  padding: 10px;
+  width: 80px;
+  cursor: pointer;
+}
+body .card-container {
+  width: 90%;
+  background-color: rgb(239, 247, 255);
+  margin-top: 60px;
+  padding: 30px 100px;
+  border-top: 2px gray solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap row;
+  gap: 65px;
+}
+body .card-container .card {
+  position: relative;
+  width: 270px;
+  height: auto;
+  border-radius: 12px;
+  transition: 0.5s;
+  font-family: yekan;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  padding: 20px 0;
+  animation: show 0.5s linear;
+}
+@keyframes show {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+body .card-container .card .like-box {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  padding: 4px 6px;
+}
+body .card-container .card .like-box .fa-heart {
+  color: gray;
+  cursor: pointer;
+  font-size: 22px;
+}
+body .card-container .card .like-box .fa-heart.liked {
+  color: red;
+  animation: like 0.4s linear;
+}
+@keyframes like {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+body .card-container .card .like-box .like-number {
+  color: #000000;
+  cursor: default;
+  user-select: none;
+}
+body .card-container .card .like-box .like-number.liked {
+  color: blue;
+  font-size: 20px;
+}
+body .card-container .card.hide {
+  display: none;
+}
+body .card-container .card:hover {
+  box-shadow: 1px 1px 8px 2px #005eff;
+}
+body .card-container .card:hover i.fa-user-doctor {
+  color: #0004ff;
+  background-color: inherit;
+  transform: scale(1.1);
+}
+body .card-container .card .doctor_name {
+  font-size: 20px;
+}
+body .card-container .card i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .card-container .card i.fa-user-doctor {
+  font-size: 35px;
+  background-color: #0004ff;
+  color: rgb(255, 255, 255);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+body .card-container .card i.fa-star, body .card-container .card i.fa-star-half-alt {
+  color: #00ccff;
+  font-size: 25px;
+}
+body .card-container .card .rate-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 15px 0;
+}
+body .card-container .card h5 {
+  font-weight: 200;
+  font-size: 14px;
+  color: #333333;
+}
+body .card-container .card .btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+body .card-container .card .btn-box .btn {
+  border: inset 3px blue;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  background-color: #005eff;
+  transition: 0.5s;
+  font-family: iranSans;
+}
+body .card-container .card .btn-box .btn:hover {
+  background-color: #f8f8ff;
+  color: #1400a9;
+}
+body .card-container .card .btn-box .fa-comments {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #1400a9;
+  width: 40px;
+  height: 36px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+body .card-container .card .btn-box .fa-comments:hover {
+  background-color: #1400a9;
+  color: #f8f8ff;
+}
+
+.modal-content {
+  background-color: #c5d1f9;
+}
+.modal-content * {
+  text-align: center;
+}
+.modal-content .modal-header {
+  background-color: #0004ff;
+  text-align: center;
+  font-family: iranSans;
+  color: #fff;
+}
+.modal-content .modal-header .close span {
+  color: red;
+}/*# sourceMappingURL=app.css.map */
