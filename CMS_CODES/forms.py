@@ -22,3 +22,19 @@ class DoctorLoginForm(FlaskForm):
     healthcare_number = StringField(label = 'کد سلامت', validators = [Length(min = 12, max = 12), DataRequired()])
     password = PasswordField(label = 'رمز عبور', validators = [DataRequired()])
     submit = SubmitField(label = 'ورود')
+
+
+class AdminLoginForm(FlaskForm):
+    username = StringField(label = 'نام کاربری', validators = [DataRequired()])
+    password = PasswordField(label = 'رمز عبور', validators = [DataRequired()])
+    submit = SubmitField(label = 'ورود', validators = [DataRequired()])
+
+
+class RegisterDoctorForm(FlaskForm):
+    name = StringField(label = 'نام و نام خانوادگی', validators = [Length(min = 5, max = 30), DataRequired()])
+    healthcare_number = StringField(label = 'شماره سلامت', validators = [Length(min = 12, max = 12), DataRequired()])
+    national_number = StringField(label = 'کدملی', validators = [Length(min = 10, max = 30), DataRequired()])
+    department = StringField(label = 'دپارتمان', validators = [DataRequired()])
+    password1 = PasswordField(label = 'رمز عبور', validators = [Length(min = 8, max = 30), DataRequired()])
+    password2 = PasswordField(label = 'تکرار رمز عبور', validators = [EqualTo('password1'), DataRequired()])
+    submit = SubmitField(label = 'ایجاد اکانت')
