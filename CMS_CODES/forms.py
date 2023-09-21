@@ -16,3 +16,9 @@ class PatientLoginForm(FlaskForm):
     national_number = StringField(label = 'کدملی', validators = [DataRequired()])
     password = PasswordField(label = 'رمز عبور', validators = [DataRequired()])
     submit = SubmitField(label = 'ورود')
+
+
+class DoctorLoginForm(FlaskForm):
+    healthcare_number = StringField(label = 'کد سلامت', validators = [Length(min = 12, max = 12), DataRequired()])
+    password = PasswordField(label = 'رمز عبور', validators = [DataRequired()])
+    submit = SubmitField(label = 'ورود')
