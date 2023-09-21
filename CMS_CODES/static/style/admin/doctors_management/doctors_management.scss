@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+@font-face {
+    font-family: 'iranSans';
+    src: 
+        url('/static/fonts/A-Iranian-Sans/Iranian_Sans.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'yekan';
+    src: url('/static/fonts/Yekan/Yekan.woff2') format('woff2'),
+         url('/static/fonts/Yekan/Yekan.eot.woff') format('woff'),
+         url('/static/fonts/Yekan/Yekan.eot.ttf') format('truetype'),
+         url('/static/fonts/Yekan/Yekan.eot') format('eot');
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px 0 100px 0;
+
+    img[alt="logo"] {
+        width: 90px;
+        position: absolute;
+        left: 50px;
+        top: 5px;
+        animation: heartbeat 1s infinite;
+    
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+        
+            20% {
+                transform: scale(1.2);
+            }
+        
+            30% {
+                transform: scale(1);
+            }
+        
+            60% {
+                transform: scale(1.25);
+            }
+        
+            80% {
+                transform: scale(1);
+            }
+        
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+    .profile-box {
+        position: absolute;
+        right: 250px;
+        top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .head {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            // transform: translateX(-250px);
+            cursor: pointer;
+            background-color: rgb(79, 4, 117);
+            width: 180px;
+            border-radius: 10px;
+            padding: 3px 5px;
+            font-family: yekan;
+            font-size: 22px;
+            color: aliceblue;
+
+            i {
+                font-size: 28px;
+                color: rgb(255, 255, 0);
+            }
+        }
+        .child-box {
+            padding: 15px 0;
+            direction: rtl;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            background-color: aliceblue;
+            clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+            transition: .5s;
+            border-radius: 0 0 10px 10px;
+            border-bottom: 2px blue solid;
+            border-right: 2px blue solid;
+            border-left: 2px blue solid;
+
+            &.active {
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+            }
+
+            a {
+                width: 100%;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                gap: 10px;
+                font-family: iranSans;
+                padding: 4px 0;
+                
+                &:hover {
+                    background-color: rgb(193, 99, 237);
+                    color: aliceblue;
+                }
+            }
+        }
+        
+    }
+    h2 {
+        font-family: yekan;
+        font-size: 40px;
+    }
+    .search-box-container {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        direction: rtl;
+        gap: 20px;
+
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: yekan;
+            gap: 25px;
+
+            button {
+                border: none;
+                outline: none;
+                border-radius: 10px;
+                font-size: 18px;
+                width: 140px;
+                background-color: khaki;
+                font-family: iranSans;
+                padding: 4px 10px;
+                transition: .4s;
+
+                &.active {
+                    background-color: #090;
+                    color: #fff;
+                    transform: scale(1.2);
+                }
+            }
+        }
+        .type_field {
+            display: flex;
+            width: 100%;
+            
+            input {
+                outline: none;
+                border: 1px solid rgb(194, 194, 194);
+                font-size: 20px;
+                font-family: yekan;
+                padding: 5px 12px;
+                border-radius: 0 20px 20px 0;
+                height: 100%;
+                width: 80%;
+    
+                &::placeholder {
+                    color: #a5a5a5;
+                }
+            }
+            i {
+                color: #fff;
+                background-color: rgb(255, 0, 55);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 25px;
+                border-radius: 20px 0 0 20px;
+                height: 100%;
+                padding: 10px;
+                width: 80px;
+                cursor: pointer;
+            }
+        }
+        
+    }
+    .table-container {
+        width: 70%;
+        background-color: rgb(253, 249, 216);
+
+        table {
+            * {
+                text-align: center;
+            }
+            thead {
+                background-color: blue;
+                color: aliceblue;
+                font-family: iranSans;
+                font-size: 20px;
+            }
+            tbody {
+                tr {
+                    animation: show .5s linear;
+
+                    @keyframes show {
+                        0% {
+                            transform: scaleX(.7);
+                            opacity: 0;
+                        }
+                        100% {
+                            transform: scaleX(1);
+                            opacity: 1;
+                        }
+                    }
+                    &.hide {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
