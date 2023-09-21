@@ -38,3 +38,9 @@ class RegisterDoctorForm(FlaskForm):
     password1 = PasswordField(label = 'رمز عبور', validators = [Length(min = 8, max = 30), DataRequired()])
     password2 = PasswordField(label = 'تکرار رمز عبور', validators = [EqualTo('password1'), DataRequired()])
     submit = SubmitField(label = 'ایجاد اکانت')
+
+
+class ConfirmAppointmentForm(FlaskForm):
+    appointment_date = StringField(label = 'تاریخ و زمان', validators = [DataRequired()])
+    patient_number = StringField(label = 'شماره تماس', validators = [Length(min = 11, max = 11)])
+    submit = SubmitField(label = 'تأیید رزرو') 
