@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'iranSans';
+    src: url('FileName.eot');
+    src: url('/static/fonts/A-Iranian-Sans/Iranian_Sans.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+    font-family: iranSans;
+}
+body {
+    background-image: url('/static/images/DNA.png');
+    background-size: cover;
+
+    a[href="/"] {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        .return-img {
+            width: 120px;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+          0% {
+              transform: scale(1);
+          }
+        
+          20% {
+              transform: scale(1.2);
+          }
+        
+          30% {
+              transform: scale(1);
+          }
+        
+          60% {
+              transform: scale(1.25);
+          }
+        
+          80% {
+              transform: scale(1);
+          }
+        
+          100% {
+              transform: scale(1);
+          }
+        }
+    }
+
+    .container {
+        width: 500px;
+        min-height: 320px;
+        background-color: #f0f8ffb3;
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        padding: 25px 15px;
+        position: absolute;
+        left: 150px;
+        top: 180px;
+        gap: 25px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 20px #b3b3b3;
+
+        .text-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            gap: 20px;
+
+            h2 {
+                font-size: 32px;
+                color: darkblue;
+            }
+            h3 {
+                font-size: 24px;
+            }
+        }
+        .btn-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            
+            .button {
+                width: 120px;
+                padding: 10px 5px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: gold;
+                text-decoration: none;
+                color: darkmagenta;
+                font-size: 22px;
+                font-weight: bold;
+                transition: .5s;
+
+                &:hover {
+                    background-color: darkmagenta;
+                    color: gold;
+                }
+            }
+        }
+    }
+}
