@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "iranSans";
+  src: url("FileName.eot");
+  src: url("/static/fonts/A-Iranian-Sans/Iranian_Sans.ttf") format("truetype");
+}
+@font-face {
+  font-family: "yekan";
+  src: url("/static/fonts/Yekan/Yekan.woff2") format("woff2"), url("/static/fonts/Yekan/Yekan.eot.woff") format("woff"), url("/static/fonts/Yekan/Yekan.eot.ttf") format("truetype"), url("/static/fonts/Yekan/Yekan.eot") format("eot");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+  font-family: iranSans;
+}
+
+body {
+  background-image: url("/static/images/doctor-login.png");
+  background-size: cover;
+}
+body .home-btn {
+  width: 160px;
+  text-align: center;
+  border-radius: 0 10px 10px 0;
+  background-color: #ffe603;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  padding: 4px 0;
+  font-size: 22px;
+  text-decoration: none;
+  font-family: yekan;
+  transition: 0.4s;
+}
+body .home-btn i {
+  color: #ffed4c;
+  transition: 0.4s;
+}
+body .home-btn:hover {
+  width: 180px;
+}
+body .home-btn:hover i {
+  color: blue;
+}
+body .container {
+  width: 500px;
+  min-height: 250px;
+  background-color: rgba(240, 248, 255, 0.658);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 15px 25px;
+  position: absolute;
+  left: 150px;
+  top: 180px;
+  gap: 25px;
+  border-radius: 20px;
+}
+body .container h1 {
+  color: blue;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+body .container .text-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 20px;
+}
+body .container .text-box h2 {
+  font-size: 32px;
+  color: darkblue;
+}
+body .container .text-box h3 {
+  font-size: 24px;
+}
+body .container .btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+body .container .btn-box .button {
+  width: 120px;
+  padding: 10px 5px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gold;
+  text-decoration: none;
+  color: darkmagenta;
+  font-size: 22px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+body .container .btn-box .button:hover {
+  background-color: darkmagenta;
+  color: gold;
+}
+
+form label {
+  color: rgb(0, 4, 111);
+  font-family: yekan;
+  font-weight: 700;
+}
+
+.err-style {
+  animation: showAlert 0.5s linear;
+  width: 400px;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  direction: rtl;
+  text-align: center;
+  background-color: rgb(255, 36, 36);
+  color: #fff;
+  font-family: iranSans;
+  font-weight: 700;
+}
+
+@keyframes showAlert {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 50px;
+  }
+}/*# sourceMappingURL=doctor_login.css.map */
