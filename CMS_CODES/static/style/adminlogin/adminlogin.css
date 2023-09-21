@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "iranSans";
+  src: url("/static/fonts/A-Iranian-Sans/Iranian_Sans.ttf") format("truetype");
+}
+@font-face {
+  font-family: "yekan";
+  src: url("/static/fonts/Yekan/Yekan.woff2") format("woff2"), url("/static/fonts/Yekan/Yekan.eot.woff") format("woff"), url("/static/fonts/Yekan/Yekan.eot.ttf") format("truetype"), url("/static/fonts/Yekan/Yekan.eot") format("eot");
+}
+body {
+  background-image: url("/static/images/adminLogin.jpg");
+  background-size: cover;
+}
+body .home-btn {
+  width: 130px;
+  text-align: center;
+  border-radius: 0 10px 10px 0;
+  background-color: #ffed4c;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  padding: 4px 0;
+  font-size: 22px;
+  text-decoration: none;
+  font-family: yekan;
+  transition: 0.4s;
+}
+body .home-btn i {
+  color: #ffed4c;
+  transition: 0.4s;
+}
+body .home-btn:hover {
+  width: 150px;
+}
+body .home-btn:hover i {
+  color: blue;
+}
+body .main-title {
+  position: absolute;
+  top: 20px;
+  right: 200px;
+  color: #000e5e;
+  font-family: yekan;
+}
+body .form-signin {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-top: 20px;
+  gap: 20px;
+  width: 400px;
+  height: 450px;
+  position: absolute;
+  top: 150px;
+  right: 120px;
+  transition: 0.5s;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: #cacfef;
+  color: #000e5e;
+  border-radius: 24% 76% 58% 42%/30% 30% 70% 70%;
+  box-shadow: inset 20px 20px 20px rgba(63, 95, 255, 0.4470588235), 15px 15px 20px rgba(30, 4, 108, 0.4470588235), 15px 10px 20px rgb(18, 5, 116), inset -15px -15px 20px #24035e;
+}
+body .form-signin input {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  width: 70%;
+  border-radius: 10px;
+  padding: 4px 5px;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+body .form-signin input::placeholder {
+  font-family: iranSans;
+  font-size: 16px;
+}
+body .form-signin label {
+  font-size: 22px;
+  font-family: iranSans;
+  transform: translateY(10px);
+}
+body .form-signin .submit-btn {
+  width: 160px;
+  border-radius: 30px;
+  background-color: green;
+  font-family: yekan;
+  color: aliceblue;
+  font-weight: 600;
+  font-size: 22px;
+  margin-top: 20px;
+}
+body .form-signin .submit-btn:hover {
+  background-color: #00e600;
+}/*# sourceMappingURL=adminlogin.css.map */

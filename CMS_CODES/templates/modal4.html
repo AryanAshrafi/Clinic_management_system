@@ -1,0 +1,37 @@
+<div class="modal fade" id="reserve-{{ pulmonology_doctor.id }}" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ pulmonology_doctor.name }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST">
+          {{ confirm_form.hidden_tag() }}
+
+          <input id="pulmonology_doctor_reserve" name="pulmonology_doctor_reserve" type="hidden"
+            value="{{ pulmonology_doctor.name }}">
+          <input id="pulmonology_doctor_reserve_hn" name="pulmonology_doctor_reserve_hn" type="hidden"
+            value="{{ pulmonology_doctor.healthcare_number }}">
+
+          {{ confirm_form.appointment_date.label() }}
+          {{ confirm_form.appointment_date(class = "form-control time-input", placeholder = "زمان ملاقات", autocomplete = "off") }}
+          </br>
+
+          {{ confirm_form.patient_number.label() }}
+          {{ confirm_form.patient_number(class = "form-control phone", placeholder = "شماره تماس به فرم : 09147788999 ", autocomplete = "off") }}
+
+          </br>
+
+          {{ confirm_form.submit(class = "btn btn-success btn-block") }}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+      </div>
+    </div>
+  </div>
+</div>

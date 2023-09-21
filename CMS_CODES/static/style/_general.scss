@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'iranSans';
+    src: 
+        url('/static/fonts/A-Iranian-Sans/Iranian_Sans.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'yekan';
+    src: url('/static/fonts/Yekan/Yekan.woff2') format('woff2'),
+         url('/static/fonts/Yekan/Yekan.eot.woff') format('woff'),
+         url('/static/fonts/Yekan/Yekan.eot.ttf') format('truetype'),
+         url('/static/fonts/Yekan/Yekan.eot') format('eot');
+}

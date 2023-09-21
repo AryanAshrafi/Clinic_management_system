@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'iranSans';
+    src: 
+        url('/static/fonts/A-Iranian-Sans/Iranian_Sans.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'yekan';
+    src: url('/static/fonts/Yekan/Yekan.woff2') format('woff2'),
+         url('/static/fonts/Yekan/Yekan.eot.woff') format('woff'),
+         url('/static/fonts/Yekan/Yekan.eot.ttf') format('truetype'),
+         url('/static/fonts/Yekan/Yekan.eot') format('eot');
+}
+body {
+    // display: flex;
+
+    header {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        direction: rtl;
+        gap: 100px;
+
+        img[alt="logo"] {
+            width: 90px;
+            position: absolute;
+            left: 50px;
+            top: 5px;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+        
+            20% {
+                transform: scale(1.2);
+            }
+        
+            30% {
+                transform: scale(1);
+            }
+        
+            60% {
+                transform: scale(1.25);
+            }
+        
+            80% {
+                transform: scale(1);
+            }
+        
+            100% {
+                transform: scale(1);
+            }
+        }
+        .profile-box {
+            position: relative;
+            right: 280px;
+            top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .head {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                // transform: translateX(-250px);
+                cursor: pointer;
+                background-color: rgb(79, 4, 117);
+                width: 180px;
+                border-radius: 10px;
+                padding: 3px 5px;
+                font-family: yekan;
+                font-size: 22px;
+                color: aliceblue;
+    
+                i {
+                    font-size: 28px;
+                    color: rgb(255, 255, 0);
+                }
+            }
+            .child-box {
+                padding: 15px 0;
+                direction: rtl;
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+                justify-content: center;
+                background-color: aliceblue;
+                clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+                transition: .5s;
+                border-radius: 0 0 10px 10px;
+                border-bottom: 2px blue solid;
+                border-right: 2px blue solid;
+                border-left: 2px blue solid;
+
+                &.active {
+                    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+                }
+
+                a {
+                    width: 100%;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    gap: 10px;
+                    font-family: iranSans;
+                    padding: 4px 0;
+                    
+                    &:hover {
+                        background-color: rgb(193, 99, 237);
+                        color: aliceblue;
+                    }
+                }
+            }
+            
+        }
+    }
+    main {
+        width: 100%;
+    }
+    .left-sidebar {
+        position: fixed;
+        height: calc(100vh - 70px);
+        left: 0;
+        top: 70px;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        // background-color: aqua;
+        padding-top: 30px;
+
+        a {
+            width: 90%;
+            text-align: center;
+            background-color: #001498;
+            padding: 10px 0;
+            font-weight: 700;
+            font-family: iranSans;
+            border-radius: 10px 0 0 10px;
+            text-decoration: none;
+            clip-path: polygon(0 0, 2% 0, 2% 100%, 0% 100%);
+            transition: .5s;
+            border-radius: 0 10px 10px 0;
+            color: aliceblue;
+
+            &:hover {
+                background-color: #00d5ff;
+                transform: scale(1.1);
+            }
+            &.show {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    }
+    .content {
+        width: 50%;
+        margin: 10px auto 0 auto;
+        text-align: center;
+
+        .default-item {
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: .8s;
+            animation: start .4s linear;
+            @keyframes start {
+                0% {
+                    transform: scale(.4);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            img {
+                width: 60%;
+            }
+            h5 {
+                font-size: 30px;
+            }
+        }
+        .unit-info-box {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            // background-color: #99d6ff;
+            background: linear-gradient(#abddff, #419cd9, #03388d);
+            padding: 10px 0 30px 0;
+            border-radius: 20% 5px;
+
+            &.active {
+                display: flex;
+                animation: show 1s linear;
+                @keyframes show {
+                    0% {
+                        opacity: 0;
+                        transform: scale(.7);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+            }
+            img {
+                width: 60%;
+                height: 270px;
+                object-fit: cover;
+                border-radius: 10px;
+                border: yellow 3px solid;
+            }
+            .title {
+                font-weight: 800;
+            }
+            .text-box {
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                width: 90%;
+                font-family: iranSans;
+                line-height: 35px;
+                color: aliceblue;
+                font-weight: 500;
+                font-size: 18px;
+
+                a {
+                    width: 400px;
+                    border-radius: 15px;
+                    text-decoration: none;
+                    background-color: #efe300;
+                    color: #002089;
+                    font-weight: 600;
+                    font-size: 22px;
+                    padding: 4px 0;
+                    transition: .5s;
+                    border: #efe300 3px solid;
+
+                    &:hover {
+                        background-color: inherit;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        
+        * {
+            direction: rtl;
+        }
+    }
+    .right-sidebar {
+        position: fixed;
+        height: calc(100vh - 70px);
+        right: 0;
+        top: 70px;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 70px;
+        // background-color: aqua;
+        text-align: right;
+        padding-top: 30px;
+
+        a {
+            width: 90%;
+            text-align: center;
+            background-color: #001498;
+            padding: 10px 0;
+            font-weight: 700;
+            font-family: iranSans;
+            border-radius: 10px 0 0 10px;
+            text-decoration: none;
+            clip-path: polygon(99% 0, 100% 0%, 100% 100%, 99% 100%);
+            transition: .5s;
+            color: aliceblue;
+
+            &:hover {
+                background-color: #00d5ff;
+                transform: scale(1.1);
+            }
+            &.show {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    }
+}

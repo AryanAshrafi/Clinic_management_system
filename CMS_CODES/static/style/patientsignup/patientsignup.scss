@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'iranSans';
+    src: 
+        url('/static/fonts/A-Iranian-Sans/Iranian_Sans.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'yekan';
+    src: url('/static/fonts/Yekan/Yekan.woff2') format('woff2'),
+         url('/static/fonts/Yekan/Yekan.eot.woff') format('woff'),
+         url('/static/fonts/Yekan/Yekan.eot.ttf') format('truetype'),
+         url('/static/fonts/Yekan/Yekan.eot') format('eot');
+}
+body {
+    background-image: url('/static/images/signup.jpg');
+    background-size: cover;
+
+    .home-btn {
+        width: 130px;
+        text-align: center;
+        border-radius: 0 10px 10px 0;
+        background-color: #ffed4c;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        padding: 4px 0;
+        font-size: 22px;
+        text-decoration: none;
+        font-family: yekan;
+        transition: .4s;
+
+        i {
+            color: #ffed4c;
+            transition: .4s;
+        }
+        &:hover {
+            width: 150px;
+            i {
+                color: blue;
+            }
+        }
+    }
+    .container {
+        width: 100%;
+
+        .form-register {
+            * {
+                direction: rtl;
+                color: black;
+            }
+            .title {
+                font-weight: 700;
+                font-family: yekan;
+            }
+            .fa-user-plus {
+                color: blue;
+            }
+            label {
+                font-family: iranSans;
+                color: rgb(0, 0, 92);
+            }
+            input {
+                border: none;
+                outline: none;
+                width: 80%;
+                border-radius: 10px;
+                font-size: 1.1rem;
+                padding: 3px 7px;
+                font-family: yekan;
+                font-weight: 300;
+                padding: 5px 20px;
+
+                &.e-input {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    text-align: left;
+                    padding-left: 20px;
+                    font-weight: 700;
+                    direction: ltr;
+
+                    &::placeholder {
+                        text-align: right;
+                    }
+                }
+            }
+            padding: 20px 20px;
+            width: 500px;
+            background-color: #f0f8ffba;
+            position: absolute;
+            left: 180px;
+            top: 50px;
+            border-radius: 20px;
+            direction: rtl;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: rgb(35, 35, 35);
+            box-shadow: 2px 2px 15px 0px #747474;
+            border: 5px groove #f0f8ffba;
+
+            .submit-btn {
+                background-color: #080;
+                color: #fff;
+                font-weight: 800;
+                width: 60%;
+
+                &:hover {
+                    background-color: #0f0;
+                }
+            }
+            .check_box {
+                display: flex;
+                gap: 15px;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: translateY(-5px);
+                    background-color: gold;
+                    text-decoration: none;
+                    padding: 2px 8px;
+                    border-radius: 5px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+.alert-text {
+    width: 100%;
+    text-align: center;
+    font-family: iranSans;
+    direction: rtl;
+    font-size: 20px;
+}
+.aligning-pass {
+    width: 400px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: rgb(255, 47, 0);
+    color: #fff;
+    animation: show 1s linear;
+}
+.aligning-email {
+    @extend .aligning-pass;
+    top: 100px;
+}
+@keyframes show {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

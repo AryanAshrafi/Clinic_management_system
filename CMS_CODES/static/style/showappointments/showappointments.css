@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  direction: rtl;
+}
+
+@font-face {
+  font-family: "iranSans";
+  src: url("/static/fonts/A-Iranian-Sans/Iranian_Sans.ttf") format("truetype");
+}
+@font-face {
+  font-family: "yekan";
+  src: url("/static/fonts/Yekan/Yekan.woff2") format("woff2"), url("/static/fonts/Yekan/Yekan.eot.woff") format("woff"), url("/static/fonts/Yekan/Yekan.eot.ttf") format("truetype"), url("/static/fonts/Yekan/Yekan.eot") format("eot");
+}
+body {
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 70px;
+  width: 100%;
+  height: 100vh;
+  animation: show 1.5s linear;
+}
+@keyframes show {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+}
+body .return-img {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 150px;
+  animation: heartbeat 1s infinite;
+}
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  30% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.25);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+body h2 {
+  font-family: yekan;
+  font-weight: 700;
+}
+body .line {
+  background-color: gold;
+  width: 70%;
+  height: 4px;
+}
+body .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 70px;
+  gap: 30px;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+body .container table {
+  border-radius: 15px;
+}
+body .container table thead {
+  font-family: iranSans;
+  background-color: darkblue;
+  height: 60px;
+}
+body .container table thead i {
+  font-size: 18px;
+  margin-left: 10px;
+  color: yellow;
+}
+body .container table tbody tr:nth-child(odd) td {
+  background-color: #b6f0ff;
+  color: #333333;
+  font-weight: 600;
+  font-size: 18px;
+}
+body .container table tbody tr:nth-child(even) td {
+  background-color: #6ae0fe;
+  color: #333333;
+  font-weight: 600;
+  font-size: 18px;
+}
+body .container table tbody tr .username-box {
+  font-family: iranSans;
+  color: rgb(0, 255, 13);
+}
+body .container table tbody tr .btn-success {
+  font-family: yekan;
+}
+body .appoint_modal_container {
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.623);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+body .appoint_modal_container.show {
+  display: flex;
+}
+body .appoint_modal_container .fa-times {
+  color: rgb(255, 2, 2);
+  font-size: 40px;
+  position: absolute;
+  right: 400px;
+  top: 70px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px darkred solid;
+  transition: 0.6s;
+}
+body .appoint_modal_container .fa-times:hover {
+  background-color: red;
+  color: #fff;
+  transform: rotate(180deg);
+}
+body .appoint_modal_container .appoint_modal {
+  width: 450px;
+  height: 550px;
+  border-radius: 15px;
+  border: 5px groove #e7fdff;
+  background-color: #e7fdff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  clip-path: polygon(49% 39%, 50% 39%, 50% 40%, 49% 40%);
+  transition: 0.7s;
+}
+body .appoint_modal_container .appoint_modal.show_modal {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+body .appoint_modal_container .appoint_modal .header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 80px;
+}
+body .appoint_modal_container .appoint_modal .header img {
+  width: 75px;
+}
+body .appoint_modal_container .appoint_modal .header h4 {
+  font-family: iranSans;
+  font-size: 20px;
+  font-weight: 700;
+  color: #7e7e7e;
+}
+body .appoint_modal_container .appoint_modal .line {
+  width: 90%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: blue;
+  margin-top: 15px;
+}
+body .appoint_modal_container .appoint_modal .content {
+  width: 100%;
+  min-height: 300px;
+  background-color: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+body .appoint_modal_container .appoint_modal .content .row {
+  width: 100%;
+  height: 16.6666666667%;
+  display: flex;
+  align-items: baseline;
+}
+body .appoint_modal_container .appoint_modal .content .row i {
+  margin-left: 12px;
+}
+body .appoint_modal_container .appoint_modal .content .row:nth-child(even) {
+  font-family: iranSans;
+  font-size: 20px;
+  justify-content: flex-end;
+  padding-left: 30px;
+}
+body .appoint_modal_container .appoint_modal .print-btn {
+  margin-top: 50px;
+  width: 200px;
+}/*# sourceMappingURL=showappointments.css.map */
