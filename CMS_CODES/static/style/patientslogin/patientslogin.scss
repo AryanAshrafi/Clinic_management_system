@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'iranSans';
+    src: 
+        url('/static/fonts/A-Iranian-Sans/Iranian_Sans.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'yekan';
+    src: url('/static/fonts/Yekan/Yekan.woff2') format('woff2'),
+         url('/static/fonts/Yekan/Yekan.eot.woff') format('woff'),
+         url('/static/fonts/Yekan/Yekan.eot.ttf') format('truetype'),
+         url('/static/fonts/Yekan/Yekan.eot') format('eot');
+}
+body {
+    background-image: url('/static/images/login.jpg');
+    background-size: cover;
+
+    .home-btn {
+        width: 130px;
+        text-align: center;
+        border-radius: 0 10px 10px 0;
+        background-color: #ffd725;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        padding: 4px 0;
+        font-size: 22px;
+        text-decoration: none;
+        font-family: yekan;
+        transition: .4s;
+
+        i {
+            color: #ffd725;
+            transition: .4s;
+        }
+        &:hover {
+            width: 150px;
+            i {
+                color: blue;
+            }
+        }
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+
+        h1 {
+            font-family: iranSans;
+            position: relative;
+            top: -70px;
+            color: aliceblue;
+            font-weight: 800;
+        }
+
+        .form-signin {
+            width: 35%;
+            height: 420px;
+            border-radius: 15px;
+            background-color: #4763ffac;
+            border: #2d4cffac 5px groove;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            gap: 8px;
+
+            input {
+                direction: rtl;
+                text-align: right;
+                width: 70%;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                font-size: 18px;
+                padding: 3px 15px;
+
+                &::placeholder {
+                    font-family: yekan;
+                    color: rgba(84, 84, 84, 0.868);
+                }
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            .submit-btn {
+                width: 50%;
+                background-color: green;
+                color: aliceblue;
+                text-align: center;
+                font-family: yekan;
+                padding: 4px 0;
+                margin-bottom: 10px;
+            }
+            label {
+                font-family: iranSans;
+                font-weight: 700;
+            }
+            .check_box {
+                width: 80%;
+                display: flex;
+                align-items: baseline;
+                justify-content: center;
+                gap: 10px;
+                direction: rtl;
+                margin-top: 15px;
+
+                a {
+                    text-decoration: none;
+                    background-color: #ffd725;
+                    border-radius: 5px;
+                    padding: 3px 5px;
+                }
+            }
+        }
+    }
+}
+
+.err-style {
+    animation: showAlert .5s linear;
+    width: 400px;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    direction: rtl;
+    text-align: center;
+    background-color: rgb(255, 36, 36);
+    color: #fff;
+    font-family: iranSans;
+    font-weight: 700;
+}
+@keyframes showAlert {
+    from {
+        top: -100px;
+    }
+    to {
+        top: 50px;
+    }
+}
